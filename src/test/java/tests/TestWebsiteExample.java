@@ -38,4 +38,20 @@ public class TestWebsiteExample extends WebDriverConfig{
 
 
     }
+    @Test
+    public void searchCheck() {
+
+        driver.findElement(By.id("search_query_top")).sendKeys("Delphin Atoma FD-R Head 50x40");
+
+        driver.findElement(By.cssSelector("#search_block_top .btn.button-search")).click();
+        driver.findElement(By.xpath("//img[contains(@src,'delphin-atoma-fd-head-50x40.jpg')]")).click();
+
+        Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"center_column\"]/div/div/div[3]/h1")).isDisplayed());
+
+
+
+
+
+
+    }
 }

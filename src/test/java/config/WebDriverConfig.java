@@ -16,7 +16,7 @@ public class WebDriverConfig {
     @Before
         public void before() throws InterruptedException {
 
-            System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\JetBrains\\chromedriver\\chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", "C:\\chromedriver\\chromedriver.exe");
             driver = new ChromeDriver();
             driver.manage().window().maximize();
             driver.get("https://www.carpmix.pl/");

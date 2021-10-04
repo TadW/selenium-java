@@ -1,6 +1,7 @@
 package tests;
 
 import config.WebDriverConfig;
+import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 
@@ -13,6 +14,8 @@ public class TestWebsiteExample extends WebDriverConfig{
         driver.findElement(By.id("email")).sendKeys("test@email.com");
         driver.findElement(By.id("passwd")).sendKeys("haslo");
         driver.findElement(By.id("SubmitLogin")).click();
+
+        Assert.assertTrue(driver.findElement(By.id("center_column")).isDisplayed());
 
     }
 

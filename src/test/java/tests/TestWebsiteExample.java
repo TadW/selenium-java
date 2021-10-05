@@ -73,4 +73,39 @@ public class TestWebsiteExample extends WebDriverConfig {
 
 
     }
+    @Test
+    public void checkBasketPrice() {
+
+        //add first item to basket
+        driver.findElement(By.id("search_query_top")).sendKeys("Delphin Atoma FD-R Head 50x40");
+        driver.findElement(By.cssSelector("#search_block_top .btn.button-search")).click();
+        driver.findElement(By.xpath("//img[contains(@src,'delphin-atoma-fd-head-50x40.jpg')]")).click();
+
+        WebElement addbasket = driver.findElement(By.xpath("//span[contains(text(),'Dodaj do koszyka')]"));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", addbasket);
+
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.findElement(By.xpath("//*[@id=\"layer_cart\"]/div[1]/div[2]/div[4]/a/span")).click();
+
+        //add second item to basket
+        driver.findElement(By.id("search_query_top")).sendKeys("Delphin Magma M3 Medium Feeder 360 cm/120 g");
+        driver.findElement(By.cssSelector("#search_block_top .btn.button-search")).click();
+        driver.findElement(By.xpath("//img[contains(@src,'delphin-magma-m3-medium-feeder-360-cm120-g.jpg')]")).click();
+
+        WebElement addbasket2 = driver.findElement(By.xpath("//span[contains(text(),'Dodaj do koszyka')]"));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", addbasket2);
+
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.findElement(By.xpath("//*[@id=\"layer_cart\"]/div[1]/div[2]/div[4]/a/span")).click();
+
+        String expected = "367,30 zł";
+        String actual = driver.findElement(By.xpath("//*[@id=\"total_price\"]")).getText();
+        Assert.assertEquals(expected, actual);
+
+        WebElement price = driver.findElement(By.xpath("//*[@id=\"total_price\"]"));
+        String pricesTotal = price.getText();
+        System.out.println(pricesTotal);
+
+
+    }
 }

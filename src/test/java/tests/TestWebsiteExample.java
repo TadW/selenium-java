@@ -4,12 +4,16 @@ import config.WebDriverConfig;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 
-public class TestWebsiteExample extends WebDriverConfig{
+import java.util.concurrent.TimeUnit;
+
+public class TestWebsiteExample extends WebDriverConfig {
 
 
     @Test
-    public void loginTest()   {
+    public void loginTest() {
 
         driver.findElement(By.id("email")).sendKeys("test@email.com");
         driver.findElement(By.id("passwd")).sendKeys("haslo");
@@ -22,8 +26,8 @@ public class TestWebsiteExample extends WebDriverConfig{
     @Test
     public void registrationTest() throws InterruptedException {
 
-         driver.findElement(By.id("email_create")).sendKeys("test@email.com");
-         driver.findElement(By.id("SubmitCreate")).click();
+        driver.findElement(By.id("email_create")).sendKeys("test@email.com");
+        driver.findElement(By.id("SubmitCreate")).click();
 
         Thread.sleep(2000);
 
@@ -38,19 +42,34 @@ public class TestWebsiteExample extends WebDriverConfig{
 
 
     }
+
     @Test
     public void searchCheck() {
 
         driver.findElement(By.id("search_query_top")).sendKeys("Delphin Atoma FD-R Head 50x40");
-
         driver.findElement(By.cssSelector("#search_block_top .btn.button-search")).click();
         driver.findElement(By.xpath("//img[contains(@src,'delphin-atoma-fd-head-50x40.jpg')]")).click();
 
-        Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"center_column\"]/div/div/div[3]/h1")).isDisplayed());
+        // Test search
+        // Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"center_column\"]/div/div/div[3]/h1")).isDisplayed());
+
+        WebElement addbasket = driver.findElement(By.xpath("//span[contains(text(),'Dodaj do koszyka')]"));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", addbasket);
+
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        //add item to basket
+        driver.findElement(By.xpath("//*[@id=\"layer_cart\"]/div[1]/div[2]/div[4]/a/span")).click();
 
 
+        String expected = "PODSUMOWANIE ZAKUPÓW"+"\n"+"Twój koszyk zawiera: 1 produkt";
+        String actual = driver.findElement(By.xpath("//*[@id=\"cart_title\"]")).getText();
+        Assert.assertEquals(expected, actual);
 
 
+        // check item in the basket - print on the console
+        WebElement basket = driver.findElement(By.xpath("//*[@id=\"cart_title\"]"));
+        String baskettext = basket.getText();
+        System.out.println(baskettext);
 
 
     }

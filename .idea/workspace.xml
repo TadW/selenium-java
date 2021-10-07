@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3847f20d-b31f-45da-adba-26751b5ca71a" name="Changes" comment="update">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/config/WebDriverConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/config/WebDriverConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/TestWebsiteExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/TestWebsiteExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/config/WebDriverConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/config/WebDriverConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/tests/TestWebsiteExample.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/tests/TestWebsiteExample.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,23 +29,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
   </component>
-  <component name="RunManager" selected="JUnit.TestWebsiteExample.checkBasketItems">
-    <configuration name="TestWebsiteExample.basketCheck" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="selenium-java" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.TestWebsiteExample" />
-      <option name="METHOD_NAME" value="basketCheck" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.TestWebsiteExample.checkBasketPrice">
     <configuration name="TestWebsiteExample.checkBasketItems" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="selenium-java" />
       <extension name="coverage">
@@ -58,6 +46,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestWebsiteExample.checkBasketPrice" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="selenium-java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.TestWebsiteExample" />
+      <option name="METHOD_NAME" value="checkBasketPrice" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestWebsiteExample.loginTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="selenium-java" />
       <extension name="coverage">
@@ -69,6 +73,22 @@
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.TestWebsiteExample" />
       <option name="METHOD_NAME" value="loginTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestWebsiteExample.registrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="selenium-java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.TestWebsiteExample" />
+      <option name="METHOD_NAME" value="registrationTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -92,10 +112,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestWebsiteExample.checkBasketItems" />
+        <item itemvalue="JUnit.TestWebsiteExample.checkBasketPrice" />
         <item itemvalue="JUnit.TestWebsiteExample.searchCheck" />
-        <item itemvalue="JUnit.TestWebsiteExample.basketCheck" />
+        <item itemvalue="JUnit.TestWebsiteExample.registrationTest" />
         <item itemvalue="JUnit.TestWebsiteExample.loginTest" />
+        <item itemvalue="JUnit.TestWebsiteExample.checkBasketItems" />
       </list>
     </recent_temporary>
   </component>
@@ -129,7 +150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633431258943</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="update">
+      <created>1633438658039</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1633438658039</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -13,7 +13,14 @@ public class TestWebsiteExample extends WebDriverConfig {
 
 
     @Test
-    public void loginTest() {
+    public void loginTest() throws InterruptedException {
+
+        driver.get("https://www.carpmix.pl/");
+        driver.manage().timeouts().implicitlyWait(1000,TimeUnit.MILLISECONDS);
+
+        WebElement login = driver.findElement(By.cssSelector("[title=\"Zaloguj się do swojego konta klienta\"]"));
+        login.click();
+        Thread.sleep(2000);
 
         driver.findElement(By.id("email")).sendKeys("test@email.com");
         driver.findElement(By.id("passwd")).sendKeys("haslo");
@@ -25,6 +32,10 @@ public class TestWebsiteExample extends WebDriverConfig {
 
     @Test
     public void registrationTest() throws InterruptedException {
+
+        driver.get("https://www.carpmix.pl/logowanie?back=my-account");
+        driver.manage().timeouts().implicitlyWait(1000,TimeUnit.MILLISECONDS);
+
 
         driver.findElement(By.id("email_create")).sendKeys("test@email.com");
         driver.findElement(By.id("SubmitCreate")).click();
@@ -45,6 +56,9 @@ public class TestWebsiteExample extends WebDriverConfig {
 
     @Test
     public void searchCheck() {
+
+        driver.get("https://www.carpmix.pl/");
+        driver.manage().timeouts().implicitlyWait(1000,TimeUnit.MILLISECONDS);
 
         driver.findElement(By.id("search_query_top")).sendKeys("Delphin Atoma FD-R Head 50x40");
         driver.findElement(By.cssSelector("#search_block_top .btn.button-search")).click();
@@ -76,6 +90,9 @@ public class TestWebsiteExample extends WebDriverConfig {
     @Test
     public void checkBasketPrice() {
 
+        driver.get("https://www.carpmix.pl/");
+        driver.manage().timeouts().implicitlyWait(1000,TimeUnit.MILLISECONDS);
+
         //add first item to basket
         driver.findElement(By.id("search_query_top")).sendKeys("Delphin Atoma FD-R Head 50x40");
         driver.findElement(By.cssSelector("#search_block_top .btn.button-search")).click();
@@ -105,6 +122,11 @@ public class TestWebsiteExample extends WebDriverConfig {
         WebElement price = driver.findElement(By.xpath("//*[@id=\"total_price\"]"));
         String pricesTotal = price.getText();
         System.out.println(pricesTotal);
+
+        WebElement basket = driver.findElement(By.xpath("//*[@id=\"cart_title\"]"));
+        String baskettext = basket.getText();
+        System.out.println(baskettext);
+
 
 
     }

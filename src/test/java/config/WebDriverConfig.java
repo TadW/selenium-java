@@ -20,7 +20,7 @@ public class WebDriverConfig {
 
         @After
         public void after(){
-        //driver.close();
+        driver.close();
         driver.quit();
 
         }
